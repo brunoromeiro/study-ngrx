@@ -9,11 +9,13 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import { MoviesPageComponent } from './movies-page/movies-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyCounterComponent
+    MyCounterComponent,
+    MoviesPageComponent
   ],
   imports: [
     BrowserModule,
