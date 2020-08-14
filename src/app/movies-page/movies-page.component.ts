@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from '../service/movies/movies.service';
-import {Search} from '../models/search';
+import {Movie} from '../models/movies';
 
 @Component({
   selector: 'app-movies-page',
@@ -8,7 +8,7 @@ import {Search} from '../models/search';
   styleUrls: ['./movies-page.component.scss']
 })
 export class MoviesPageComponent implements OnInit {
-  movies: Search;
+  movies: Movie[];
 
   constructor(
     private movieService: MoviesService
