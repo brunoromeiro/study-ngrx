@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import {counterReducer} from './counter.reducer';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({count: counterReducer}, {}),
-    StoreDevtoolsModule
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
